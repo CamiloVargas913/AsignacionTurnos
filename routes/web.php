@@ -17,3 +17,4 @@ Route::get('/', function () {
 Route::get('/usuario', function () {
     return view('Forusuarios');
 });
+Route::post('formusuarios','CrearUsuariosController@CrearUsuarios');
