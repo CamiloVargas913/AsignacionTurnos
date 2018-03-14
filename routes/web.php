@@ -17,4 +17,10 @@ Route::get('/', function () {
 Route::get('/usuario', function () {
     return view('Forusuarios');
 });
+Route::get('/reporte', function () {
+    return view('reporteCajeros');
+});
+Route::get('/cajeros', function () {
+    return view('cajeros');
+});
 Route::post('formusuarios','CrearUsuariosController@CrearUsuarios');

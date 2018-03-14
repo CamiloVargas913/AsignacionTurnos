@@ -29,8 +29,12 @@ class CrearUsuariosController extends Controller
     		"Tipo"=>$tipo,
     		"Prioridad"=>$prioridad
     	];
-			
-	  		dd($usuarios);
-
+        $value=Session::get('key'); 
+          echo $value."<br>";
+	if (Session::has($nombre)) {
+                echo "existe session ";
+        }else{
+            echo"no esxiste";
+        }
     }
 }

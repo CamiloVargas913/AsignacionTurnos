@@ -1,9 +1,15 @@
 @extends('Home')
 @section('contenido')
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Usuario</a>
+        </li>
+        <li class="breadcrumb-item active">Asignacion turno</li>
+      </ol>
   <form action="{{url('formusuarios')}}" method="POST">
   	{{csrf_field()}}
-    <div class="container col-8 card p-4">
-       <h2 class="text-center" >Ingrese Sus Datos</h2>
+    <div class="container col-7 card p-4">
+       <h2 class="text-center" >Asignacion de turnos </h2>
       <div class="form-group row">
       <div class="col-12">
         <input class="form-control" type="text" placeholder="Nombre" name="nombre" id="example-text-input" required="">
@@ -54,5 +60,4 @@
     <button type="submit" class="btn btn-primary">Generar Turno</button>
   </div>
   </form>
-  <!--Hola soy David-->
 @stop

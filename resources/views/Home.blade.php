@@ -6,88 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Colombia Compra</title>
+  <title>Banco Udecimo</title>
   <!-- Bootstrap core CSS-->
-  <link href="{{'bootstrap/css/bootstrap.min.css'}}" rel="stylesheet">
+  <link href="{{'vendor/bootstrap/css/bootstrap.min.css'}}" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="{{'font-awesome/css/font-awesome.min.css'}}" rel="stylesheet" type="text/css">
+  <link href="{{'vendor/font-awesome/css/font-awesome.min.css'}}" rel="stylesheet" type="text/css">
   <!-- Page level plugin CSS-->
-  <link href="{{'datatables/dataTables.bootstrap4.css'}}" rel="stylesheet">
+  <link href="{{'vendor/datatables/dataTables.bootstrap4.css'}}" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="{{'css/sb-admin.css'}}" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="{{'css/sliderCard.css'}}" rel="stylesheet">
 </head>
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<body class="sticky-footer sidenav-toggled bg-dark" id="page-top">
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand " href="index.html">Colombia Compra  <li class="fa fa-flag-o"> </li> </a>
+  <nav class="navbar navbar-expand-lg static-top navbar-dark bg-dark" id="mainNav">
+    <a class="navbar-brand " href="">Banco Udecimo  <li class=" fa fa-money "> </li> </a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Productos">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-shopping-basket"></i>
-            <span class="nav-link-text">Productos</span>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registro Usuarios">
+          <a class="nav-link" href="{{'usuario'}}">
+            <i class="fa fa-users"></i>
+            <span class="nav-link-text">Registro Usuarios</span>
           </a>
-          <ul class="sidenav-second-level collapse" id="collapseMulti">
-            <li>
-              <a href="{{'productos'}}">Todos los productos</a>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Busqueda</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                <li>
-                  <a href="{{ 'codigo' }}" class="fa fa-dot-circle-o">  Codigo</a>
-                </li>
-                <li>
-                  <a href="{{ 'nombre' }}" class="fa fa-dot-circle-o">  Nombre</a>
-                </li>
-                <li>
-                  <a href="{{ 'clase' }}" class="fa fa-dot-circle-o">  Clase</a>
-                </li>
-                <li>
-                  <a href="{{ 'tipo' }}" class="fa fa-dot-circle-o">  Tipo</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Compra">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="  fa fa-handshake-o"></i>
-            <span class="nav-link-text">Compra</span>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Cajeros">
+          <a class="nav-link" href="{{'cajeros'}}">
+            <i class="fa fa-child"></i>
+            <span class="nav-link-text">Cajeros</span>
           </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents">
-            <li>
-              <a href="{{ 'compras' }}">  Compra productos</a>
-            </li>
-            <!--<li>
-              <a href="cards.html">Busqueda</a>
-            </li>-->
-          </ul>
         </li>
-        <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-file"></i>
-            <span class="nav-link-text">Example Pages</span>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reporte Cajero">
+          <a class="nav-link" href="{{'reporte'}}">
+            <i class="fa fa-archive"></i>
+            <span class="nav-link-text">Reporte Cajero</span>
           </a>
-          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-            <li>
-              <a href="login.html">Login Page</a>
-            </li>
-            <li>
-              <a href="register.html">Registration Page</a>
-            </li>
-            <li>
-              <a href="forgot-password.html">Forgot Password Page</a>
-            </li>
-            <li>
-              <a href="blank.html">Blank Page</a>
-            </li>
-          </ul>
-        </li>-->
+        </li>
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
@@ -105,8 +63,80 @@
     </div>
   </nav>
   <div class="content-wrapper">
-    <div class="container-fluid">
-      @yield('contenido')
+    <div class="container-fluid"> 
+      <!--carusel-->
+          <div class="row mx-auto my-auto">
+        <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+            <div class="carousel-inner w-100" role="listbox">
+                <div class="carousel-item active">
+                  <div class="card d-block col-3 p-2 m-1">
+                    <i class="fa fa-id-badge float-left"></i>
+                      <ul class="data float-left">  
+                        <li># Turno: 01</li>
+                        <li>Nombre: juan Camilo</li>
+                        <li>Tipo: Retiro</li>
+                        <li>Prioridad: Hombre</li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card d-block col-3 p-2 m-1">
+                    <i class="fa fa-id-badge float-left"></i>
+                      <ul class="data float-left">  
+                        <li># Turno:02</li>
+                        <li>Nombre: juan Camilo</li>
+                        <li>Tipo: Retiro</li>
+                        <li>Prioridad: Hombre</li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card d-block col-3 p-2 m-1">
+                    <i class="fa fa-id-badge float-left"></i>
+                      <ul class="data float-left">  
+                        <li># Turno:03</li>
+                        <li>Nombre: juan Camilo</li>
+                        <li>Tipo: Retiro</li>
+                        <li>Prioridad: Hombre</li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card d-block col-3 p-2 m-1">
+                    <i class="fa fa-id-badge float-left"></i>
+                      <ul class="data float-left">  
+                        <li># Turno:04</li>
+                        <li>Nombre: juan Camilo</li>
+                        <li>Tipo: Retiro</li>
+                        <li>Prioridad: Hombre</li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card d-block col-3 p-3 m-1">
+                    <i class="fa fa-id-badge "></i>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card d-block col-3 p-3 m-1">
+                    <i class="fa fa-id-badge "></i>
+                  </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+      <!--contenido-->
+      <section class="Contenido p-3">
+        @yield('contenido')
+      </section>
     </div>
   </div>
      <footer class="sticky-footer">
@@ -138,14 +168,21 @@
         </div>
       </div>
     </div>
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{'js/jquery/jquery.min.js'}}"></script>
-    <script src="{{'bootstrap/js/bootstrap.bundle.min.js'}}"></script>  
+     <!-- Bootstrap core JavaScript-->
+    <script src="{{'vendor/jquery/jquery.min.js'}}"></script>
+    <script src="{{'vendor/bootstrap/js/bootstrap.bundle.min.js'}}"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="{{'vendor/jquery-easing/jquery.easing.min.js'}}"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="{{'vendor/chart.js/Chart.min.js'}}"></script>
+    <script src="{{'vendor/datatables/jquery.dataTables.js'}}"></script>
+    <script src="{{'vendor/datatables/dataTables.bootstrap4.js'}}"></script>
     <!-- Custom scripts for all pages-->
     <script src="{{'js/sb-admin.min.js'}}"></script>
     <!-- Custom scripts for this page-->
     <script src="{{'js/sb-admin-datatables.min.js'}}"></script>
+    <script src="{{'js/sb-admin-charts.min.js'}}"></script>
+    <script src="{{'js/sliderCard.js'}}"></script>
   </div>
 </body>
-
 </html>
