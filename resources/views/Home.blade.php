@@ -70,8 +70,7 @@
             <div class="carousel-inner w-100" role="listbox">
                 <div class="carousel-item active">
                   <div class="card d-block col-3 p-2 m-1">
-                    <i class="fa fa-id-badge float-left"></i>
-                    <h3 class="text-center m-4">Lista turnos</h3>
+                    <h3 class="text-center">Listado Turnos</h3>
                   </div>
                 </div>
                 @if(Session::has('Usuarios'))

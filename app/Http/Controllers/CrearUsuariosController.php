@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use \SplFixedArray;
+use \SplDoublyLinkedList;
 
 use \Session;
 
@@ -18,17 +18,11 @@ class CrearUsuariosController extends Controller
     	$edad=$value->input('edad');
     	$tipo=$value->input('tipo');
     	$prioridad=$value->input('prioridad');
-    	$usuarios=new SplFixedArray();
-        $van=true;
+    	$usuarios= new SplDoublyLinkedList;
+        $usuarios1= new SplDoublyLinkedList;
         if (Session::has('Usuarios')) {
             $usuarios= Session::get('Usuarios');
-            foreach ($usuarios as $usuario) {
-                foreach ($usuario as $key => $value) {
-                    if ($usuario['Documento']==$documento) {
-                        $van=false;
-                    }
-                }
-            }
+            $van=$this->validacionUsuario($documento);// validacion de usuario existente
             if ($van) {
                 $usuarios[]=[
                 "Nombre"=>$nombre,
@@ -40,7 +34,7 @@ class CrearUsuariosController extends Controller
                 "Prioridad"=>$prioridad
                 ];
                 Session::put('Usuarios',$usuarios);
-                return view('alertas/usuarioExitoso');
+               return view('alertas/usuarioExitoso');
             }else{
                 return view('alertas/errorUsuario');
             }
@@ -57,5 +51,16 @@ class CrearUsuariosController extends Controller
             Session::put('Usuarios',$usuarios1);
             return view('alertas/usuarioExitoso');
         }
+    }
+    public function validacionUsuario($documento){
+        $van=true;
+        foreach (Session::get('Usuarios') as $usuario) {
+            foreach ($usuario as $key => $value) {
+                if ($usuario['Documento']==$documento) {
+                        $van=false;
+                }
+            }
+        }
+        return $van;
     }
 }
