@@ -71,47 +71,24 @@
                 <div class="carousel-item active">
                   <div class="card d-block col-3 p-2 m-1">
                     <i class="fa fa-id-badge float-left"></i>
-                      <ul class="data float-left">  
-                        <li># Turno: 01</li>
-                        <li>Nombre: juan Camilo</li>
-                        <li>Tipo: Retiro</li>
-                        <li>Prioridad: Hombre</li>
-                      </ul>
+                    <h3 class="text-center m-4">Lista turnos</h3>
                   </div>
                 </div>
-                <div class="carousel-item">
-                  <div class="card d-block col-3 p-2 m-1">
-                    <i class="fa fa-id-badge float-left"></i>
-                      <ul class="data float-left">  
-                        <li># Turno:02</li>
-                        <li>Nombre: juan Camilo</li>
-                        <li>Tipo: Retiro</li>
-                        <li>Prioridad: Hombre</li>
-                      </ul>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="card d-block col-3 p-2 m-1">
-                    <i class="fa fa-id-badge float-left"></i>
-                      <ul class="data float-left">  
-                        <li># Turno:03</li>
-                        <li>Nombre: juan Camilo</li>
-                        <li>Tipo: Retiro</li>
-                        <li>Prioridad: Hombre</li>
-                      </ul>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="card d-block col-3 p-2 m-1">
-                    <i class="fa fa-id-badge float-left"></i>
-                      <ul class="data float-left">  
-                        <li># Turno:04</li>
-                        <li>Nombre: juan Camilo</li>
-                        <li>Tipo: Retiro</li>
-                        <li>Prioridad: Hombre</li>
-                      </ul>
-                  </div>
-                </div>
+                @if(Session::has('Usuarios'))
+                  @foreach(Session::get('Usuarios') as $index => $usuarios)
+                      <div class="carousel-item">
+                        <div class="card d-block col-3 p-2 m-1">
+                          <i class="fa fa-id-badge float-left"></i>
+                            <ul class="data float-left">
+                              <li>{{ "# Turno: "}}{{ $index }}</li>
+                            @foreach($usuarios as $key=> $value)  
+                              <li><small><b>{{ $key.": "}}</b>{{ $value}}</small></li>
+                             @endforeach  
+                            </ul>
+                        </div>
+                      </div>
+                    @endforeach
+                   @endif 
                 <div class="carousel-item">
                   <div class="card d-block col-3 p-3 m-1">
                     <i class="fa fa-id-badge "></i>
