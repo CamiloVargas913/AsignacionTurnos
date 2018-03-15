@@ -80,7 +80,7 @@
                         <div class="card d-block col-3 p-2 m-1">
                           <i class="fa fa-id-badge float-left"></i>
                             <ul class="data float-left">
-                              <li>{{ "# Turno: "}}{{ $index }}</li>
+                              <li><b>{{ "# Turno: "}}</b>{{ $index }}</li>
                             @foreach($usuarios as $key=> $value)  
                               <li><small><b>{{ $key.": "}}</b>{{ $value}}</small></li>
                              @endforeach  
@@ -88,7 +88,7 @@
                         </div>
                       </div>
                     @endforeach
-                   @endif 
+                  @endif 
                 <div class="carousel-item">
                   <div class="card d-block col-3 p-3 m-1">
                     <i class="fa fa-id-badge "></i>

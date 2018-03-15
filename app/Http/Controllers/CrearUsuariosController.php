@@ -19,19 +19,31 @@ class CrearUsuariosController extends Controller
     	$tipo=$value->input('tipo');
     	$prioridad=$value->input('prioridad');
     	$usuarios=new SplFixedArray();
+        $van=true;
         if (Session::has('Usuarios')) {
             $usuarios= Session::get('Usuarios');
-            $usuarios[]=[
-            "Nombre"=>$nombre,
-            "Apellido"=>$apellido,
-            "Documento"=>$documento,
-            "Ciudad"=>$ciudad,
-            "Edad"=>$edad,
-            "Tipo"=>$tipo,
-            "Prioridad"=>$prioridad
-        ];
-        Session::put('Usuarios',$usuarios);
-        echo "Se inserto los valores";
+            foreach ($usuarios as $usuario) {
+                foreach ($usuario as $key => $value) {
+                    if ($usuario['Documento']==$documento) {
+                        $van=false;
+                    }
+                }
+            }
+            if ($van) {
+                $usuarios[]=[
+                "Nombre"=>$nombre,
+                "Apellido"=>$apellido,
+                "Documento"=>$documento,
+                "Ciudad"=>$ciudad,
+                "Edad"=>$edad,
+                "Tipo"=>$tipo,
+                "Prioridad"=>$prioridad
+                ];
+                Session::put('Usuarios',$usuarios);
+                return view('alertas/usuarioExitoso');
+            }else{
+                return view('alertas/errorUsuario');
+            }
         }else{
             $usuarios1[]=[
             "Nombre"=>$nombre,
@@ -43,8 +55,7 @@ class CrearUsuariosController extends Controller
             "Prioridad"=>$prioridad
             ];
             Session::put('Usuarios',$usuarios1);
-            echo "Se creo la sesion";
+            return view('alertas/usuarioExitoso');
         }
-        return view('Home');
     }
 }
