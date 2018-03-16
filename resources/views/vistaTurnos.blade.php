@@ -24,21 +24,25 @@
                   <th>Edad</th>
                   <th>Tipo Turno</th>
                   <th>Prioridad</th>
+                  <th>Accion</th>
                 </tr>
               </thead>  
               <tbody>
-                  @if(Session::has('reporteAtendido')) 
+                @if(Session::has('vistaAtendido')) 
               <tr>
-                  @foreach (Session::get('reporteAtendido') as $keys=>$atendido)
+                  @foreach (Session::get('vistaAtendido') as $keys=>$atendido)
                     @foreach ($atendido as $key => $atendidos) 
                     <td>{{$atendidos}}</td>  
                     @endforeach 
-                           
+                        <th><a href="atendidos?key={{$keys}}" class="btn btn-primary">Atender</a></th>
+                     
               </tr>
                   @endforeach 
               <td></td>    
-                @endif  
+                @endif
+
               </tbody>
+              
             </table>
           </div>
         </div>

@@ -6,7 +6,7 @@
         </li>
         <li class="breadcrumb-item active">Atencion Cliente</li>
       </ol>
-      <form action="{{url('formusuarios')}}" method="POST" class="float-left m-4">
+      <form action="{{url('cajerosa')}}" method="POST" class="float-left m-4">
         {{csrf_field()}}
         <div class="container col-12 card p-4">
            <h2 class="text-center" >Cajero #1 </h2>
@@ -19,7 +19,7 @@
           <button type="submit" class="btn btn-primary">Buscar</button>
         </div>
       </form>
-      <form action="{{url('formusuarios')}}" method="POST" class="float-left m-4">
+      <form action="{{url('cajerosb')}}" method="POST" class="float-left m-4">
         {{csrf_field()}}
         <div class="container col-12 card p-4">
            <h2 class="text-center" >Cajero #2 </h2>
@@ -27,7 +27,7 @@
           <div class="form-group row">
             <div class="col-12">
               <select class="form-control" name="prioridad" id="prioridad" required="">
-                <option value="">Ingrese una priorodad</option>
+                <option value="">Ingrese una prioridad</option>
                 <option value="1">1. Mujer embarazada </option>
                 <option value="2">2.Tercera edad</option>
                 <option value="3">3.Discapacidad</option>
@@ -39,7 +39,7 @@
           <button type="submit" class="btn btn-primary">Buscar</button>
         </div>
       </form>
-      <form action="{{url('formusuarios')}}" method="POST" class="float-left m-4">
+      <form action="{{url('cajerosd')}}" method="POST" class="float-left m-4">
         {{csrf_field()}}
         <div class="container col-12 card p-4">
           <h2 class="text-center" >Cajero #3 </h2>

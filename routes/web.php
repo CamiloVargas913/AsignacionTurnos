@@ -23,4 +23,11 @@ Route::get('/reporte', function () {
 Route::get('/cajeros', function () {
     return view('cajeros');
 });
+Route::get('/atender', function () {
+    return view('reporteCajeros');
+});
 Route::post('formusuarios','CrearUsuariosController@CrearUsuarios');
+Route::post('cajerosa','cajeroIdentificacionController@cajeroIdentificacion');
+Route::post('cajerosb','cajeroPrioridadController@cajeroPrioridad');
+Route::post('cajerosd','cajeroEdadController@cajeroEdad');
+Route::get('atendidos','atendidosController@atendidos');
