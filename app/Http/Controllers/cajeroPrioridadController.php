@@ -30,7 +30,10 @@ class cajeroPrioridadController extends Controller
                             "Prioridad"=>$usuario['Prioridad']
                             ];
                             Session::put('vistaAtendido',$atendido);
-                        }   
+                        }else{
+
+                            return view('alertas/cajeroError');   
+                        }
                    }else{
                         $atendido1[]=[
                             "ID"=>2,

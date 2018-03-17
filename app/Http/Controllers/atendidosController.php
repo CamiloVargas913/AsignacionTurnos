@@ -53,20 +53,21 @@ class atendidosController extends Controller
                     Session::put('reporteAtendido',$reporte);
                 }
                 
-           }else{
-                $reporte1[]=[
-                    "ID"=>$atendido['ID'],
-                    "Nombre"=>$atendido['Nombre'],
-                    "Apellido"=>$atendido['Apellido'],
-                    "Documento"=>$atendido['Documento'],
-                    "Ciudad"=>$atendido['Ciudad'],
-                    "Edad"=>$atendido['Edad'],
-                    "Tipo"=>$atendido['Tipo'],
-                    "Prioridad"=>$atendido['Prioridad']
-                ];
-                    Session::put('reporteAtendido',$reporte1);
+                }else{
+                    $reporte1[]=[
+                        "ID"=>$atendido['ID'],
+                        "Turno"=>$atendido['Turno'],
+                        "Nombre"=>$atendido['Nombre'],
+                        "Apellido"=>$atendido['Apellido'],
+                        "Documento"=>$atendido['Documento'],
+                        "Ciudad"=>$atendido['Ciudad'],
+                        "Edad"=>$atendido['Edad'],
+                        "Tipo"=>$atendido['Tipo'],
+                        "Prioridad"=>$atendido['Prioridad']
+                    ];
+                        Session::put('reporteAtendido',$reporte1);
 
-            }
+                }
         }
          return view('alertas/cajeroExito'); 
     }       

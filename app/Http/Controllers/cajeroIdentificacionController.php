@@ -15,9 +15,7 @@ class cajeroIdentificacionController extends Controller
     	$atendido=new SplDoublyLinkedList;
         $atendido1=new SplDoublyLinkedList;
 	    	foreach (Session::get('Usuarios') as $index =>$usuario) {
-	            foreach ($usuario as $key => $value) {
                   if (Session::has('vistaAtendido')) {
-                    
                         if ($usuario['Documento']==$documento) {
                             $atendido[]=[
                             "ID"=>1,
@@ -32,9 +30,13 @@ class cajeroIdentificacionController extends Controller
                             ];
                             Session::put('vistaAtendido',$atendido);
                             return view('vistaTurnos');
+                        }else{
+
+                            return view('alertas/cajeroError');
                         }
+                   	}
                         
-                   }else{
+           			else{
                         $atendido1[]=[
                             "ID"=>1,
                             "Turno"=>$index,
@@ -47,10 +49,11 @@ class cajeroIdentificacionController extends Controller
                             "Prioridad"=>$usuario['Prioridad']
                         ];
                             Session::put('vistaAtendido',$atendido1);
-
+                        
                     }    
                 
-	        }
+	        
         }
     }
+
 }
