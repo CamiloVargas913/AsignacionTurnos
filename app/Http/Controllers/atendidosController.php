@@ -11,12 +11,12 @@ use \Session;
 class atendidosController extends Controller
 {
     public function atendidos(Request $value){
-		$variable=$_GET['key'];
-		$reporte=new SplDoublyLinkedList;
-		$reporte1=new SplDoublyLinkedList;
+        $variable=$_GET['key'];
+        $reporte=new SplDoublyLinkedList;
+        $reporte1=new SplDoublyLinkedList;
         $elimiusu=new SplDoublyLinkedList;
         $elimiusu=[];
-		foreach (Session::get('vistaAtendido') as $keys=> $atendido) {
+        foreach (Session::get('vistaAtendido') as $keys=> $atendido) {
              $turno=$atendido['Turno'];
              if (Session::has('Usuarios')) {
                     foreach (Session::get('Usuarios') as $index => $usuarios) {
