@@ -14,7 +14,30 @@ class atendidosController extends Controller
 		$variable=$_GET['key'];
 		$reporte=new SplDoublyLinkedList;
 		$reporte1=new SplDoublyLinkedList;
+        $elimiusu=new SplDoublyLinkedList;
+        $elimiusu=[];
 		foreach (Session::get('vistaAtendido') as $keys=> $atendido) {
+             $turno=$atendido['Turno'];
+             if (Session::has('Usuarios')) {
+                    foreach (Session::get('Usuarios') as $index => $usuarios) {
+                       $elimiusu[$index]=[
+                        "Nombre"=>$usuarios['Nombre'],
+                        "Apellido"=>$usuarios['Apellido'],
+                        "Documento"=>$usuarios['Documento'],
+                        "Ciudad"=>$usuarios['Ciudad'],
+                        "Edad"=>$usuarios['Edad'],
+                        "Tipo"=>$usuarios['Tipo'],
+                        "Prioridad"=>$usuarios['Prioridad']
+                        ];
+                    }
+                }
+                if ($keys==$variable) {
+                    array_splice($elimiusu,$turno, 1);
+                    Session::put('Usuarios',$elimiusu);
+                }
+                       
+        return view('alertas/cajeroExito');    
+    }
             if (Session::has('reporteAtendido')) {
                 if ($keys==$variable) {
                     $reporte=Session::get('reporteAtendido');
@@ -45,8 +68,6 @@ class atendidosController extends Controller
                 ];
                     Session::put('reporteAtendido',$reporte1);
 
-            }*/
-        }          
-        return view('alertas/cajeroExito');    
-    }
+            }
+        }   
 }

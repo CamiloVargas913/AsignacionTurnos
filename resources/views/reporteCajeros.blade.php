@@ -17,6 +17,7 @@
               <thead>
                 <tr>
                   <th># Cajero</th>
+                  <th>Turno</th>
                   <th>Nombre Cliente</th>
                   <th>Apellido</th>
                   <th>Cedula</th>

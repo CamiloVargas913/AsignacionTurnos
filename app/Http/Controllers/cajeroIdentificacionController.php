@@ -14,14 +14,14 @@ class cajeroIdentificacionController extends Controller
     	$documento=$value->input('documento');
     	$atendido=new SplDoublyLinkedList;
         $atendido1=new SplDoublyLinkedList;
-	    	foreach (Session::get('Usuarios') as $usuario) {
+	    	foreach (Session::get('Usuarios') as $index =>$usuario) {
 	            foreach ($usuario as $key => $value) {
                   if (Session::has('vistaAtendido')) {
                     
                         if ($usuario['Documento']==$documento) {
                             $atendido[]=[
                             "ID"=>1,
-                            "Turno"=>$key,
+                            "Turno"=>$index,
                             "Nombre"=>$usuario['Nombre'],
                             "Apellido"=>$usuario['Apellido'],
                             "Documento"=>$usuario['Documento'],
