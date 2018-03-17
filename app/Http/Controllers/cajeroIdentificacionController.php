@@ -37,7 +37,7 @@ class cajeroIdentificacionController extends Controller
                    }else{
                         $atendido1[]=[
                             "ID"=>1,
-                            "Turno"=>$key,
+                            "Turno"=>$index,
                             "Nombre"=>$usuario['Nombre'],
                             "Apellido"=>$usuario['Apellido'],
                             "Documento"=>$usuario['Documento'],

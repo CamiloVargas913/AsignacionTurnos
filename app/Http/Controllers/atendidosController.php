@@ -35,9 +35,7 @@ class atendidosController extends Controller
                     array_splice($elimiusu,$turno, 1);
                     Session::put('Usuarios',$elimiusu);
                 }
-                       
-        return view('alertas/cajeroExito');    
-    }
+
             if (Session::has('reporteAtendido')) {
                 if ($keys==$variable) {
                     $reporte=Session::get('reporteAtendido');
@@ -69,5 +67,7 @@ class atendidosController extends Controller
                     Session::put('reporteAtendido',$reporte1);
 
             }
-        }   
+        }
+         return view('alertas/cajeroExito'); 
+    }       
 }
