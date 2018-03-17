@@ -17,7 +17,6 @@ class cajeroIdentificacionController extends Controller
 	    	foreach (Session::get('Usuarios') as $index =>$usuario) {
 	            foreach ($usuario as $key => $value) {
                   if (Session::has('vistaAtendido')) {
-                    
                         if ($usuario['Documento']==$documento) {
                             $atendido[]=[
                             "ID"=>1,
@@ -33,6 +32,7 @@ class cajeroIdentificacionController extends Controller
                             Session::put('vistaAtendido',$atendido);
                             return view('vistaTurnos');
                         }
+                            return view('alertas/cajeroError');
                         
                    }else{
                         $atendido1[]=[
@@ -47,10 +47,11 @@ class cajeroIdentificacionController extends Controller
                             "Prioridad"=>$usuario['Prioridad']
                         ];
                             Session::put('vistaAtendido',$atendido1);
-
+                        
                     }    
                 
 	        }
         }
     }
+
 }
