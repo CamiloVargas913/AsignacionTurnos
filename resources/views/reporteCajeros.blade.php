@@ -29,9 +29,9 @@
               <tbody>
                   @if(Session::has('reporteAtendido')) 
               <tr>
-                  @foreach (Session::get('reporteAtendido') as $keys=>$atendido)
-                    @foreach ($atendido as $key => $atendidos) 
-                    <td>{{$atendidos}}</td>  
+                  @foreach (Session::get('reporteAtendido') as $keys=>$reporte)
+                    @foreach ($reporte as $key => $reportes) 
+                    <td>{{$reportes}}</td>  
                     @endforeach 
                            
               </tr>

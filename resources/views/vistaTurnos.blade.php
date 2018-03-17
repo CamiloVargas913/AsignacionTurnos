@@ -35,7 +35,7 @@
                     <td>{{$atendidos}}</td>  
                     @endforeach 
                         <th><a href="atendidos?key={{$keys}}" class="btn btn-primary">Atender</a></th>
-                     
+                    <td>{{$keys}}</td> 
               </tr>
                   @endforeach 
               <td></td>    

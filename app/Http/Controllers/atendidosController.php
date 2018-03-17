@@ -15,8 +15,11 @@ class atendidosController extends Controller
 		$reporte=new SplDoublyLinkedList;
 		$reporte1=new SplDoublyLinkedList;
 		foreach (Session::get('vistaAtendido') as $keys=> $atendido) {
+
             if (Session::has('reporteAtendido')) {
+
                 if ($keys==$variable) {
+                    $reporte=Session::get('reporteAtendido');
                     $reporte[]=[
                     "ID"=>$atendido['ID'],
                     "Nombre"=>$atendido['Nombre'],
@@ -28,7 +31,6 @@ class atendidosController extends Controller
                     "Prioridad"=>$atendido['Prioridad']
                     ];
                     Session::put('reporteAtendido',$reporte);
-                   
                 }
                 
            }else{

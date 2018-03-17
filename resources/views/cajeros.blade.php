@@ -29,10 +29,10 @@
               <select class="form-control" name="prioridad" id="prioridad" required="">
                 <option value="">Ingrese una prioridad</option>
                 <option value="1">1. Mujer embarazada </option>
-                <option value="2">2.Tercera edad</option>
-                <option value="3">3.Discapacidad</option>
-                <option value="4">4.Mujer</option>
-                <option value="5">5.Hombre</option>
+                <option value="2">2. Tercera edad</option>
+                <option value="3">3. Discapacidad</option>
+                <option value="4">4. Mujer</option>
+                <option value="5">5. Hombre</option>
               </select>
             </div>
           </div>
