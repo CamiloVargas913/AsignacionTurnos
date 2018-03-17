@@ -22,6 +22,7 @@ class cajeroPrioridadController extends Controller
                         if ($usuario['Prioridad']==$prioridad) {
                             $atendido[]=[
                             "ID"=>2,
+                            "Turno"=>$key,
                             "Nombre"=>$usuario['Nombre'],
                             "Apellido"=>$usuario['Apellido'],
                             "Documento"=>$usuario['Documento'],
@@ -36,6 +37,7 @@ class cajeroPrioridadController extends Controller
                    }else{
                         $atendido1[]=[
                             "ID"=>2,
+                            "Turno"=>$key,
                             "Nombre"=>$usuario['Nombre'],
                             "Apellido"=>$usuario['Apellido'],
                             "Documento"=>$usuario['Documento'],

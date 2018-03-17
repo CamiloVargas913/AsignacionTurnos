@@ -16,12 +16,13 @@ class cajeroEdadController extends Controller
     	$atendido=new SplDoublyLinkedList;
         $atendido1=new SplDoublyLinkedList;
     
-	    	foreach (Session::get('Usuarios') as $usuario) {
+	    	foreach (Session::get('Usuarios') as $key=>$usuario) {
                   if (Session::has('vistaAtendido')) {
                     
                         if ($usuario['Edad']==$edad) {
                             $atendido[]=[
                             "ID"=>3,
+                            "Turno"=>$key,
                             "Nombre"=>$usuario['Nombre'],
                             "Apellido"=>$usuario['Apellido'],
                             "Documento"=>$usuario['Documento'],
@@ -37,6 +38,7 @@ class cajeroEdadController extends Controller
                    }else{
                         $atendido1[]=[
                             "ID"=>3,
+                            "Turno"=>$key,
                             "Nombre"=>$usuario['Nombre'],
                             "Apellido"=>$usuario['Apellido'],
                             "Documento"=>$usuario['Documento'],

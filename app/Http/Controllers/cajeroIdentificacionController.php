@@ -21,6 +21,7 @@ class cajeroIdentificacionController extends Controller
                         if ($usuario['Documento']==$documento) {
                             $atendido[]=[
                             "ID"=>1,
+                            "Turno"=>$key,
                             "Nombre"=>$usuario['Nombre'],
                             "Apellido"=>$usuario['Apellido'],
                             "Documento"=>$usuario['Documento'],
@@ -36,6 +37,7 @@ class cajeroIdentificacionController extends Controller
                    }else{
                         $atendido1[]=[
                             "ID"=>1,
+                            "Turno"=>$key,
                             "Nombre"=>$usuario['Nombre'],
                             "Apellido"=>$usuario['Apellido'],
                             "Documento"=>$usuario['Documento'],

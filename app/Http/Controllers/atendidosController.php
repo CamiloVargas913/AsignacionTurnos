@@ -15,13 +15,12 @@ class atendidosController extends Controller
 		$reporte=new SplDoublyLinkedList;
 		$reporte1=new SplDoublyLinkedList;
 		foreach (Session::get('vistaAtendido') as $keys=> $atendido) {
-
             if (Session::has('reporteAtendido')) {
-
                 if ($keys==$variable) {
                     $reporte=Session::get('reporteAtendido');
                     $reporte[]=[
                     "ID"=>$atendido['ID'],
+                    "Turno"=>$atendido['Turno'],
                     "Nombre"=>$atendido['Nombre'],
                     "Apellido"=>$atendido['Apellido'],
                     "Documento"=>$atendido['Documento'],
@@ -46,7 +45,7 @@ class atendidosController extends Controller
                 ];
                     Session::put('reporteAtendido',$reporte1);
 
-            }
+            }*/
         }          
         return view('alertas/cajeroExito');    
     }
