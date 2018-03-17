@@ -34,7 +34,7 @@ class cajeroPrioridadController extends Controller
                    }else{
                         $atendido1[]=[
                             "ID"=>2,
-                            "Turno"=>$key,
+                            "Turno"=>$index,
                             "Nombre"=>$usuario['Nombre'],
                             "Apellido"=>$usuario['Apellido'],
                             "Documento"=>$usuario['Documento'],

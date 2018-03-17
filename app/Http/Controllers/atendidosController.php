@@ -11,12 +11,12 @@ use \Session;
 class atendidosController extends Controller
 {
     public function atendidos(Request $value){
-		$variable=$_GET['key'];
-		$reporte=new SplDoublyLinkedList;
-		$reporte1=new SplDoublyLinkedList;
+        $variable=$_GET['key'];
+        $reporte=new SplDoublyLinkedList;
+        $reporte1=new SplDoublyLinkedList;
         $elimiusu=new SplDoublyLinkedList;
         $elimiusu=[];
-		foreach (Session::get('vistaAtendido') as $keys=> $atendido) {
+        foreach (Session::get('vistaAtendido') as $keys=> $atendido) {
              $turno=$atendido['Turno'];
              if (Session::has('Usuarios')) {
                     foreach (Session::get('Usuarios') as $index => $usuarios) {
@@ -35,9 +35,7 @@ class atendidosController extends Controller
                     array_splice($elimiusu,$turno, 1);
                     Session::put('Usuarios',$elimiusu);
                 }
-                       
-        return view('alertas/cajeroExito');    
-    }
+
             if (Session::has('reporteAtendido')) {
                 if ($keys==$variable) {
                     $reporte=Session::get('reporteAtendido');
@@ -69,5 +67,7 @@ class atendidosController extends Controller
                     Session::put('reporteAtendido',$reporte1);
 
             }
-        }   
+        }
+         return view('alertas/cajeroExito'); 
+    }       
 }
