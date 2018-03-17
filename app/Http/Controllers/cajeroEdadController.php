@@ -33,8 +33,9 @@ class cajeroEdadController extends Controller
                             ];
                             Session::put('vistaAtendido',$atendido);
                             
-                        }
+                        }else{
                             return view('alertas/cajeroError');
+                        }
                    }else{
                         $atendido1[]=[
                             "ID"=>3,

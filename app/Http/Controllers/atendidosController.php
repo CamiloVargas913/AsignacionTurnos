@@ -56,6 +56,7 @@ class atendidosController extends Controller
                 }else{
                     $reporte1[]=[
                         "ID"=>$atendido['ID'],
+                        "Turno"=>$atendido['Turno'],
                         "Nombre"=>$atendido['Nombre'],
                         "Apellido"=>$atendido['Apellido'],
                         "Documento"=>$atendido['Documento'],
